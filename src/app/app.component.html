@@ -1,0 +1,13 @@
+<main>
+  <app-add-post (onUser)="addUser($event)"></app-add-post>
+  <div *ngFor="let user of users; let i = index;">
+    <app-post 
+      [name]="user.name" 
+      [status]="user.status" 
+      [avatar]="user.avatar"
+      [index]="i"
+      (delete)="deleteUser($event)"
+    >
+    </app-post>
+  </div>
+</main>
